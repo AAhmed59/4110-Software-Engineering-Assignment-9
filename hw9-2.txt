@@ -1,0 +1,32 @@
+#Revision 1 START 3/22/22
+##Begin Ashiq Ahmed here 3/22/22
+
+#Define recursive function print_range
+def print_range(start, end):
+    #If start < end, count up from start to end
+    if (start < end):
+        print(start)
+        print_range(start + 1, end)
+    #If start > end, count down from start to end
+    elif (start > end):
+        print(start)
+        print_range(start - 1, end)
+    #Otherwise start is equal to end
+    else:
+        print(start)
+
+    return 0
+
+#Ask the user for their input and check if it's valid
+s = input("Please enter the starting number: ")
+while (s.isnumeric() != True):
+    s = input("Please enter a valid starting number: ")
+e = input("Please enter the ending number: ")
+while (e.isnumeric() != True):
+    e = input("Please enter a valid ending number: ")
+
+print_range(int(s), int(e))
+
+#Revision 1 FINAL 3/22/22
+##End Ashiq Ahmed here
+#HALF-LIFE/Ron Bass/John Richards Sr./After-Burner Elite
