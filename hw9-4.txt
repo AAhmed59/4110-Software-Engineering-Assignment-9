@@ -1,0 +1,32 @@
+#Revision 1 START 3/23/22
+##Begin Ashiq Ahmed here 3/23/22
+
+#Import json and csv to be able to work with those files
+
+import json
+import csv
+
+
+#Define sales_data to perform csv to json conversion
+sales_data = []
+
+#Read in csv file and append values to sales_data
+with open('SalesJan2009.csv') as csvf:
+    fieldNames = ("Transaction date", "Product", "Price", "Payment Type", "Name", 
+                    "City", "State", "Country")
+    csvRead = csv.DictReader(csvf, fieldNames)
+
+    for row in csvRead:
+        sales_data.append(row)
+
+#Convert the list into a JSON file after creating a json string
+with open('transaction_data.json', 'w') as jsonf:
+    jsonString = json.dumps(sales_data, indent=4)
+    jsonf.write(jsonString)
+
+#Print values to user
+print(sales_data)
+
+#Revision 1 FINAL 3/23/22
+##End Ashiq Ahmed here
+#HALF-LIFE/Ron Bass/John Richards Sr./After-Burner Elite
